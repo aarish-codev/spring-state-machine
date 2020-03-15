@@ -33,7 +33,6 @@ class PaymentServiceImplTest {
     @Test
     void preAuth() {
         Payment savedPayment = paymentService.newPayment(payment);
-        paymentService.preAuth(savedPayment.getId());
 
         System.out.println("Should be NEW");
         System.out.println(savedPayment.getState());
@@ -51,7 +50,7 @@ class PaymentServiceImplTest {
 
 
     @Transactional
-    @RepeatedTest(5)
+    @RepeatedTest(10)
     void testAuth() {
         Payment savedPayment = paymentService.newPayment(payment);
 
